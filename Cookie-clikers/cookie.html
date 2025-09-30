@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/style.css" type="style/css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="" type="script/Javascript"> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie-cliker</title>
 </head>
 <body>
-
+<div class="background1" >
 <span id="aantal_cookies"></span>
-<button onclick="klik()">Cookie</button>
-<button onclick="power()">Upgrade</button>
+
+<button class="buttoncookie" onclick="klik()"> 
+ <img class="imagecookie" src="../foto/thecoockie.png" alt="thecookie" > 
+</button>
+
+<button class="buttonupgrade" onclick="power()">
+    <img class="imageupgrade" src="../foto/upgrade.png" alt="">
+</button>
+</div>
 
 <script>
     let aantal_cookies = 0;

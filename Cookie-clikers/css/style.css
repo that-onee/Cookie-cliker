@@ -1,0 +1,43 @@
+body{
+    background-color: black;
+    color: white;
+    margin:0;
+}
+
+//.background1//{
+    background-image: url(../foto/specialbackground.jpeg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center ;
+    height: 100vh;
+    width: 100vw;
+}
+button{
+    background-color: black;
+    color: white;
+}
+img{
+    padding: 100px;
+}
+.imagecookie{
+    width: 200px;
+    height: 200px;
+    padding: 100px;
+    padding-left: 400px;
+    padding-top: 100px;
+}
+.imageupgrade{
+    width: 200px;
+    height: 50px;
+    padding: 405px;
+    padding-top: 20px;
+}
+.buttoncookie{
+    border: none;
+    outline: none;
+    align-items: center;
+}
+.buttonupgrade{
+    border: none;
+    outline: none;
+}
