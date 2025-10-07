@@ -5,7 +5,7 @@
 let aantal_cookies = 0;
 let klik_power = 1;
 let power_cost = 10;
-let total_cookies_production = 0;
+let total_cookies_produced = 0;
 
 // Cursor gedeelte ᓚᘏᗢ
  let cursor_count = 0;
@@ -86,7 +86,6 @@ return (cursor_count * cursor_production) +
         (farm_count * farm_production);
 }
 
-            
  // Update click power
 document.getElementById("click-power").innerText = klik_power;
 document.getElementById("power-cost").innerText = power_cost;
