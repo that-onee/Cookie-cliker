@@ -3,8 +3,7 @@ body{
     color: white;
     margin:0;
 }
-
-//.background1//{
+.gamecontainer{
     background-image: url(../foto/specialbackground.jpeg);
     background-size:cover;
     background-repeat: no-repeat;

@@ -8,30 +8,29 @@
     <title>Cookie-cliker</title>
 </head>
 <body>
-<div class="background1" >
-<span id="aantal_cookies"></span>
+    <h1>Cookie-cliker</h1>
+<div class="gamecontainer" >
+<span id="aantal_cookies">0</span>
 
 <button class="buttoncookie" onclick="klik()"> 
  <img class="imagecookie" src="../foto/thecoockie.png" alt="thecookie" > 
 </button>
 
-<button class="buttonupgrade" onclick="power()">
+<button class="buttonupgrade" onclick="power()">s
     <img class="imageupgrade" src="../foto/upgrade.png" alt="">
 </button>
+
+<div class="productie-eenheden">
+    <h3>Productie-eenheden</h3>
+    <div class="eenheid">
+      <div class="eenheid-header">
+
+      </div>
+
+    </div>
+</div>
 </div>
 
-<script>
-    let aantal_cookies = 0;
-    let klik_power = 1;
-
-function power(){
-    klik_power++;
-}
-
-function klik(){
-    aantal_cookies = aantal_cookies + klik_power
-    document.getElementById("aantal_cookies").innerText = aantal_cookies
-}
-</script>
+<script src="javascript/script.js"></script>
 </body>
 </html>
