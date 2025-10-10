@@ -29,8 +29,8 @@ function klik(){
 aantal_cookies += klik_power;
 total_cookies_produced += klik_power;
 updateDisplay();
-
-    //document.getElementById("aantal_cookies").innerText = aantal_cookies
+//heb dit veranderd het origineel code is (document.getElementById("aantal_cookies").innerText =aantal_cookies)//
+document.getElementById("aantal_cookies").innerText = "Button geklikt:" + aantal_cookies
 }
 
  // Function om de click power te updaten ╰（‵□′）╯
