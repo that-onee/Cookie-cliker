@@ -17,44 +17,6 @@
 
  <div class="countcookie"><div id="aantal_cookies">Button geklikt:0</div></div>
 
- <div id=""></div>
-
- <div class="allthebuttons">
- <button id="buttoncookie" onclick="klik()"> 
-  <img class="imagecookie" src="../foto/thecoockie.png" alt="thecookie" > 
- </button>
-
- <button class="buttonupgrade" onclick="power()">
-  <img class="imageupgrade" src="../foto/upgrade.png" alt="upgrade">
- </button>
- </div>
-
-<<<<<<< HEAD
-</div>
-
-
-<script>
-
-    let aantal_cookies = 0;
-    let klik_power = 1;
-
-    let clickCOunt = 0;
-    
-    if(localStorage.getItem("clickCount")){
-        clickCount = parseInt(localStorage.getItem("clickcount"));
-    }
-
-    function power(){
-        klik_power++;
-    }
-
-    function klik(){
-        aantal_cookies = aantal_cookies + klik_power
-        document.getElementById("aantal_cookies").innerText = "Button geklikt:" +aantal_cookies
-    }
-
-</script>
-=======
 <button class="buttonupgrade" onclick="power()">s
     <img class="imageupgrade" src="../foto/upgrade.png" alt="">
 </button>
@@ -62,6 +24,5 @@
 </div>
 
 <script src="javascript/script.js"></script>
->>>>>>> 7048964227d0bb560d31b30dcb8579513c4e2374
 </body>
 </html>
