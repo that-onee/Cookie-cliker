@@ -3,35 +3,65 @@
 <head>
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="" type="script/Javascript"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Ole&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie-cliker</title>
 </head>
 <body>
-<div class="background1" >
-<span id="aantal_cookies"></span>
+<h1>Cookie-cliker</h1>
+<div class="gamecontainer" >
+<span id="aantal_cookies">0</span>
 
-<button class="buttoncookie" onclick="klik()"> 
- <img class="imagecookie" src="../foto/thecoockie.png" alt="thecookie" > 
-</button>
+ <div class="countcookie"><div id="aantal_cookies">Button geklikt:0</div></div>
 
-<button class="buttonupgrade" onclick="power()">
-    <img class="imageupgrade" src="../foto/upgrade.png" alt="">
-</button>
+ <div id=""></div>
+
+ <div class="allthebuttons">
+ <button id="buttoncookie" onclick="klik()"> 
+  <img class="imagecookie" src="../foto/thecoockie.png" alt="thecookie" > 
+ </button>
+
+ <button class="buttonupgrade" onclick="power()">
+  <img class="imageupgrade" src="../foto/upgrade.png" alt="upgrade">
+ </button>
+ </div>
+
+<<<<<<< HEAD
 </div>
 
+
 <script>
+
     let aantal_cookies = 0;
     let klik_power = 1;
 
-function power(){
-    klik_power++;
-}
+    let clickCOunt = 0;
+    
+    if(localStorage.getItem("clickCount")){
+        clickCount = parseInt(localStorage.getItem("clickcount"));
+    }
 
-function klik(){
-    aantal_cookies = aantal_cookies + klik_power
-    document.getElementById("aantal_cookies").innerText = aantal_cookies
-}
+    function power(){
+        klik_power++;
+    }
+
+    function klik(){
+        aantal_cookies = aantal_cookies + klik_power
+        document.getElementById("aantal_cookies").innerText = "Button geklikt:" +aantal_cookies
+    }
+
 </script>
+=======
+<button class="buttonupgrade" onclick="power()">s
+    <img class="imageupgrade" src="../foto/upgrade.png" alt="">
+</button>
+
+</div>
+
+<script src="javascript/script.js"></script>
+>>>>>>> 7048964227d0bb560d31b30dcb8579513c4e2374
 </body>
 </html>
