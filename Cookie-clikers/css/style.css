@@ -2,41 +2,78 @@ body{
     background-color: black;
     color: white;
     margin:0;
+    background-image: url(../../foto/specialbackground.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
 }
+h1{
+  font-family: "Ole", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.hoofdstuk1{
+    font-size: 50px;
+    padding-left: 50px;
+}
+ /* gamecontainer is niet meer nodig voor background(bepaal maar zelf hoe je eraan werk)*/
 .gamecontainer{
     background-image: url(../foto/specialbackground.jpeg);
     background-size:cover;
     background-repeat: no-repeat;
-    background-position: center ;
-    height: 100vh;
-    width: 100vw;
+    background-position: ;
+    height: 40vh;
+    width: 50vw;
 }
 button{
-    background-color: black;
-    color: white;
+    background-color: transparent;
+}
+.allthebuttons{
+    display:flex;
+    flex-direction: column;
+    float: left;
 }
 img{
-    padding: 100px;
+    padding:10px;
+    margin-left: 90px;
 }
+
 .imagecookie{
     width: 200px;
     height: 200px;
-    padding: 100px;
-    padding-left: 400px;
-    padding-top: 100px;
 }
 .imageupgrade{
     width: 200px;
     height: 50px;
-    padding: 405px;
-    padding-top: 20px;
 }
-.buttoncookie{
+.aantal_cookie{
     border: none;
     outline: none;
     align-items: center;
 }
+#buttoncookie{
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+}
 .buttonupgrade{
     border: none;
     outline: none;
+}
+.countcookie{
+  font-size: 50px;
+  font-family: "Ole", cursive;
+  font-weight: 400;
+  font-style: normal;
+  margin: 50px;
+  padding-left:20px;
+  border: 2px solid;
+  background-image: url(../../foto/cartoon-cookie.jpg);
+  background-size: 100px;
+  width: 300px;
+}
+
+#aantal_cookie{
+    size: 10px;
 }
