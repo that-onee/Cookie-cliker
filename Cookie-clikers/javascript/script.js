@@ -7,30 +7,62 @@ let klik_power = 1;
 let power_cost = 10;
 let total_cookies_produced = 0;
 
-// Cursor gedeelte ᓚᘏᗢ
- let cursor_count = 0;
- let cursor_cost = 15;
-const cursor_production = 1;
+class ProductionUnit{
+    count;
+    coost;
+    production;
+    idPrefix;
 
- // Grandma varibelen ᓚᘏᗢ
-let grandma_count = 0;
-let grandma_cost = 100;
-const grandma_production = 5;
+    constructor(starCount, startCost, startProduction, idPrefix){
+        this.count = starCount;
+        this.cost = startCost;
+        this.production = startProduction;
+        this.idPrefix = idPrefix
+    }
+
+koopUnit(){
+    if (aantal_cookies >= this.cost) {
+    aantal_cookies -= this.cost;
+    this.count++;
+    this.cost = Math.floor(this.cost * 1.15);
+    updateDisplay();
+    }
+}
+
+updateDisplay(){
+    document.getElementById(this.idPrefix + "-count").innerText = this.count;
+    document.getElementById(this.idPrefix + "-cost").innerText = this.cost;
+    document.getElementById(this.idPrefix + "-cps").innerText = this.count * this.production;
+    document.getElementById(this.idPrefix + "-btn").disabled = aantal_cookies < this.cost;
+}
+}
+
+let cursor = new ProductionUnit(0,15,1)
+let grandma = new ProductionUnit(0,100,5)
+let farm = new ProductionUnit(0,500,20)
+
+// // Cursor gedeelte ᓚᘏᗢ
+//  let cursor_count = 0;
+//  let cursor_cost = 15;
+// const cursor_production = 1;
+
+//  // Grandma varibelen ᓚᘏᗢ
+// let grandma_count = 0;
+// let grandma_cost = 100;
+// const grandma_production = 5;
             
-// Farm variábelen ᓚᘏᗢ
-let farm_count = 0;
-let farm_cost = 500;
-const farm_production = 20;
+// // Farm variábelen ᓚᘏᗢ
+// let farm_count = 0;
+// let farm_cost = 500;
+// const farm_production = 20;
 
 
 // Functions!!!!! make a class???
 
 function klik(){
-aantal_cookies += klik_power;
+aantal_cookies += klik_power; 
 total_cookies_produced += klik_power;
 updateDisplay();
-
-    //document.getElementById("aantal_cookies").innerText = aantal_cookies
 }
 
  // Function om de click power te updaten ╰（‵□′）╯
@@ -44,34 +76,41 @@ updateDisplay();
 }
 
  // Funtion to buy Cursor ╰(*°▽°*)╯
-function koopCursor() {
-if (aantal_cookies >= cursor_cost) {
-aantal_cookies -= cursor_cost;
-cursor_count++;
-cursor_cost = Math.floor(cursor_cost * 1.15);
-updateDisplay();
-    }
-}
+// function koopCursor() {
+// if (aantal_cookies >= cursor_cost) {
+// aantal_cookies -= cursor_cost;
+// cursor_count++;
+// cursor_cost = Math.floor(cursor_cost * 1.15);
+// updateDisplay();
+//     }
+// }
         
-// Function to buy Grandma ╰(*°▽°*)╯
-function koopGrandma() {
-if (aantal_cookies >= grandma_cost) {
-aantal_cookies -= grandma_cost;
-grandma_count++;
-grandma_cost = Math.floor(grandma_cost * 1.15);
-updateDisplay();
-    }
-}
+// // Function to buy Grandma ╰(*°▽°*)╯
+// function koopGrandma() {
+// if (aantal_cookies >= grandma_cost) {
+// aantal_cookies -= grandma_cost;
+// grandma_count++;
+// grandma_cost = Math.floor(grandma_cost * 1.15);
+// updateDisplay();
+//     }
+// }
         
-// Function to buy Farm ╰(*°▽°*)╯
-function koopFarm() {
-if (aantal_cookies >= farm_cost) {
-aantal_cookies -= farm_cost;
-farm_count++;
-farm_cost = Math.floor(farm_cost * 1.15);
-updateDisplay();
-    }
-}
+// // Function to buy Farm ╰(*°▽°*)╯
+// function koopFarm() {
+// if (aantal_cookies >= farm_cost) {
+// aantal_cookies -= farm_cost;
+// farm_count++;
+// farm_cost = Math.floor(farm_cost * 1.15);
+// updateDisplay();
+//     }
+// }
+
+function calcularTotalCPS() {
+return (cursor_count * cursor_production) + 
+        (grandma_count * grandma_production) + 
+        (farm_count * farm_production);
+        }
+
 
 // Function to display the cookies ヾ(⌐■_■)ノ♪
 function updateDisplay() {
@@ -86,33 +125,33 @@ return (cursor_count * cursor_production) +
         (farm_count * farm_production);
 }
 
- // Update click power
-document.getElementById("click-power").innerText = klik_power;
-document.getElementById("power-cost").innerText = power_cost;
+ // Update click power - oude
+// document.getElementById("click-power").innerText = klik_power;
+// document.getElementById("power-cost").innerText = power_cost;
             
-// Update Cursor
-document.getElementById("cursor-count").innerText = cursor_count;
-document.getElementById("cursor-cost").innerText = cursor_cost;
-document.getElementById("cursor-cps").innerText = cursor_count * cursor_production;
+// // Update Cursor
+// document.getElementById("cursor-count").innerText = cursor_count;
+// document.getElementById("cursor-cost").innerText = cursor_cost;
+// document.getElementById("cursor-cps").innerText = cursor_count * cursor_production;
             
-// Update Grandma
-document.getElementById("grandma-count").innerText = grandma_count;
-document.getElementById("grandma-cost").innerText = grandma_cost;
-document.getElementById("grandma-cps").innerText = grandma_count * grandma_production;
+// // Update Grandma
+// document.getElementById("grandma-count").innerText = grandma_count;
+// document.getElementById("grandma-cost").innerText = grandma_cost;
+// document.getElementById("grandma-cps").innerText = grandma_count * grandma_production;
             
-// Update Farm
-document.getElementById("farm-count").innerText = farm_count;
-document.getElementById("farm-cost").innerText = farm_cost;
-document.getElementById("farm-cps").innerText = farm_count * farm_production;
+// // Update Farm
+// document.getElementById("farm-count").innerText = farm_count;
+// document.getElementById("farm-cost").innerText = farm_cost;
+// document.getElementById("farm-cps").innerText = farm_count * farm_production;
             
-// Update estatísticas
-document.getElementById("total-cps").innerText = calcularTotalCPS();
-document.getElementById("total-cookies").innerText = Math.floor(total_cookies_produced);
+// // Update estatísticas
+// document.getElementById("total-cps").innerText = calcularTotalCPS();
+// document.getElementById("total-cookies").innerText = Math.floor(total_cookies_produced);
             
-// Als er niet genoeg cookies er zijn
-document.getElementById("cursor-btn").disabled = aantal_cookies < cursor_cost;
-document.getElementById("grandma-btn").disabled = aantal_cookies < grandma_cost;
-document.getElementById("farm-btn").disabled = aantal_cookies < farm_cost;
+// // Als er niet genoeg cookies er zijn
+// document.getElementById("cursor-btn").disabled = aantal_cookies < cursor_cost;
+// document.getElementById("grandma-btn").disabled = aantal_cookies < grandma_cost;
+// document.getElementById("farm-btn").disabled = aantal_cookies < farm_cost;
         
         
 // Automaties productie
