@@ -2,7 +2,7 @@ body{
     background-color: black;
     color: white;
     margin:0;
-    background-image: url(../../foto/specialbackground.jpeg);
+    background-image: url(  ./../foto/specialbackground.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -71,7 +71,7 @@ img{
   border: 2px solid;
   background-image: url(../../foto/cartoon-cookie.jpg);
   background-size: 100px;
-  width: 300px;
+  width: 350px;
 }
 
 #aantal_cookie{
