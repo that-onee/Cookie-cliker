@@ -40,6 +40,12 @@ updateDisplay(){
 let cursor = new ProductionUnit(0,15,1)
 let grandma = new ProductionUnit(0,100,5)
 let farm = new ProductionUnit(0,500,20)
+let mine = new ProductionUnit(0,1000,25)
+let factory = new ProductionUnit(0,1500,40)
+let bank = new ProductionUnit(0,2000,55)
+let temple = new ProductionUnit(0,3000,70)
+let wizard_tower = new ProductionUnit(0,4000,120)
+let shipment = new ProductionUnit(0,4500,150)
 
 // // Cursor gedeelte ᓚᘏᗢ
 //  let cursor_count = 0;

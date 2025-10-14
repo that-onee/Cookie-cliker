@@ -18,14 +18,14 @@ h1{
     padding-left: 50px;
 }
  /* gamecontainer is niet meer nodig voor background(bepaal maar zelf hoe je eraan werk)*/
-.gamecontainer{
+/* .gamecontainer{
     background-image: url(../foto/specialbackground.jpeg);
     background-size:cover;
     background-repeat: no-repeat;
     background-position: ;
     height: 40vh;
     width: 50vw;
-}
+} */
 button{
     background-color: transparent;
 }
