@@ -62,6 +62,10 @@ let shipment = new ProductionUnit(0,4500,150)
 // let farm_cost = 500;
 // const farm_production = 20;
 
+//function voor resultaat(progress)
+document.getElementById("aantal_cookies").innerHTML = localStorage.clickcount;
+
+
 
 // Functions!!!!! make a class???
 
@@ -69,6 +73,19 @@ function klik(){
 aantal_cookies += klik_power; 
 total_cookies_produced += klik_power;
 updateDisplay();
+
+//localstorage opslaan voor de progress(resultaat)
+aantal_cookies = localStorage.clickcount;
+
+if(localStorage.clickcount) {
+    localStorage.clickcount = Number(localStorage.clickcount)+1;
+} else{
+    localStorage.clickcount = 1;
+}
+document.getElementById("aantal_cookies").innerHTML = localStorage.clickcount;
+//heb dit veranderd het origineel code is (document.getElementById("aantal_cookies").innerText =aantal_cookies)
+document.getElementById("aantal_cookies").innerText = aantal_cookies
+
 }
 
  // Function om de click power te updaten ╰（‵□′）╯
