@@ -65,8 +65,6 @@ let shipment = new ProductionUnit(0,4500,150)
 //function voor resultaat(progress)
 document.getElementById("aantal_cookies").innerHTML = localStorage.clickcount;
 
-
-
 // Functions!!!!! make a class???
 
 function klik(){
@@ -76,15 +74,14 @@ updateDisplay();
 
 //localstorage opslaan voor de progress(resultaat)
 aantal_cookies = localStorage.clickcount;
-
 if(localStorage.clickcount) {
     localStorage.clickcount = Number(localStorage.clickcount)+1;
 } else{
     localStorage.clickcount = 1;
 }
-document.getElementById("aantal_cookies").innerHTML = localStorage.clickcount;
+document.getElementById("aantal_cookies").innerHTML =localStorage.clickcount;
 //heb dit veranderd het origineel code is (document.getElementById("aantal_cookies").innerText =aantal_cookies)
-document.getElementById("aantal_cookies").innerText = aantal_cookies
+document.getElementById("aantal_cookies").innerText = aantal_cookies;
 
 }
 
@@ -96,7 +93,7 @@ klik_power++;
 power_cost = Math.floor(power_cost * 1.5);
 updateDisplay();
     }
-}
+}   
 
  // Funtion to buy Cursor ╰(*°▽°*)╯
 // function koopCursor() {
