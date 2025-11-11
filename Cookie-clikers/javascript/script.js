@@ -126,10 +126,10 @@ function klik(){
 // }
 
 function calcularTotalCPS() {
-return (cursor_count * cursor_production) + 
-        (grandma_count * grandma_production) + 
-        (farm_count * farm_production);
-        }
+    return (cursor_count * cursor_production) + 
+           (grandma_count * grandma_production) + 
+           (farm_count * farm_production);
+ }
 
 
 // Function to display the cookies ヾ(⌐■_■)ノ♪
@@ -140,9 +140,9 @@ document.getElementById("aantal_cookies").innerText = Math.floor(aantal_cookies)
 
 // CPS total
 function calcularTotalCPS() {
-return (cursor_count * cursor_production) + 
-        (grandma_count * grandma_production) + 
-        (farm_count * farm_production);
+    return (cursor_count * cursor_production) + 
+           (grandma_count * grandma_production) + 
+           (farm_count * farm_production);
 }
 
  // Update click power - oude
