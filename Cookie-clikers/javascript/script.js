@@ -129,7 +129,7 @@ function calcularTotalCPS() {
     return (cursor_count * cursor_production) + 
            (grandma_count * grandma_production) + 
            (farm_count * farm_production);
- }
+}
 
 
 // Function to display the cookies ヾ(⌐■_■)ノ♪
