@@ -20,12 +20,12 @@ class ProductionUnit{
         this.idPrefix = idPrefix
     }
 
-koopUnit(){
-    if (aantal_cookies >= this.cost) {
-    aantal_cookies -= this.cost;
-    this.count++;
-    this.cost = Math.floor(this.cost * 1.15);
-    updateDisplay();
+    koopUnit(){
+        if (aantal_cookies >= this.cost) {
+        aantal_cookies -= this.cost;
+        this.count++;
+        this.cost = Math.floor(this.cost * 1.15);
+        updateDisplay();
     }
 }
 
@@ -68,31 +68,31 @@ document.getElementById("aantal_cookies").innerHTML = localStorage.clickcount;
 // Functions!!!!! make a class???
 
 function klik(){
-aantal_cookies += klik_power; 
-total_cookies_produced += klik_power;
-updateDisplay();
-
-//localstorage opslaan voor de progress(resultaat)
-aantal_cookies = localStorage.clickcount;
-if(localStorage.clickcount) {
-    localStorage.clickcount = Number(localStorage.clickcount)+1;
-} else{
-    localStorage.clickcount = 1;
-}
-document.getElementById("aantal_cookies").innerHTML =localStorage.clickcount;
-//heb dit veranderd het origineel code is (document.getElementById("aantal_cookies").innerText =aantal_cookies)
-document.getElementById("aantal_cookies").innerText = aantal_cookies;
+    total_cookies_produced += klik_power; 
+    aantal_cookies += klik_power;  
+    
+    updateDisplay(); 
+    aantal_cookies = localStorage.clickcount; 
+    //localstorage opslaan voor de progress(resultaat) 
+    localStorage.clickcount = Number(localStorage.clickcount)+1; 
+    if(localStorage.clickcount) { 
+        localStorage.clickcount = 1; 
+    } else{ 
+        document.getElementById("aantal_cookies").innerHTML =localStorage.clickcount; 
+    } 
+    document.getElementById("aantal_cookies").innerText = aantal_cookies; 
+    //heb dit veranderd het origineel code is (document.getElementById("aantal_cookies").innerText =aantal_cookies) 
 
 }
 
  // Function om de click power te updaten ╰（‵□′）╯
  function power() {
-if (aantal_cookies >= power_cost) {
-aantal_cookies -= power_cost;
-klik_power++;
-power_cost = Math.floor(power_cost * 1.5);
-updateDisplay();
-    }
+     aantal_cookies -= power_cost;
+     if (aantal_cookies >= power_cost) {
+         power_cost = Math.floor(power_cost * 1.5);
+         klik_power++;
+        }
+        updateDisplay();
 }   
 
  // Funtion to buy Cursor ╰(*°▽°*)╯
