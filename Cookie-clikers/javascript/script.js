@@ -18,12 +18,12 @@ class ProductionUnit {
     this.idPrefix = idPrefix;
   }
 
-  koopUnit() {
-    if (aantal_cookies >= this.cost) {
-      aantal_cookies -= this.cost;
-      this.count++;
-      this.cost = Math.floor(this.cost * 1.15);
-      updateDisplay();
+    koopUnit(){
+        if (aantal_cookies >= this.cost) {
+        aantal_cookies -= this.cost;
+        this.count++;
+        this.cost = Math.floor(this.cost * 1.15);
+        updateDisplay();
     }
   }
 
@@ -55,35 +55,68 @@ function klik() {
   total_cookies_produced += klik_power;
   updateDisplay();
 
-  //localstorage opslaan voor de progress(resultaat)
-  aantal_cookies = localStorage.clickcount;
+function klik(){
+    total_cookies_produced += klik_power; 
+    aantal_cookies += klik_power;  
+    
+    updateDisplay(); 
+    aantal_cookies = localStorage.clickcount; 
+    //localstorage opslaan voor de progress(resultaat) 
+    localStorage.clickcount = Number(localStorage.clickcount)+1; 
+    if(localStorage.clickcount) { 
+        localStorage.clickcount = 1; 
+    } else{ 
+        document.getElementById("aantal_cookies").innerHTML =localStorage.clickcount; 
+    } 
+    document.getElementById("aantal_cookies").innerText = aantal_cookies; 
+    //heb dit veranderd het origineel code is (document.getElementById("aantal_cookies").innerText =aantal_cookies) 
 
-  if (localStorage.clickcount) {
-    localStorage.clickcount = Number(localStorage.clickcount) + 1;
-  } else {
-    localStorage.clickcount = 1;
-  }
-  document.getElementById("aantal_cookies").innerHTML = localStorage.clickcount;
-  //heb dit veranderd het origineel code is (document.getElementById("aantal_cookies").innerText =aantal_cookies)
-  document.getElementById("aantal_cookies").innerText = aantal_cookies;
 }
 
-// Function om de click power te updaten ╰（‵□′）╯
-function power() {
-  if (aantal_cookies >= power_cost) {
-    aantal_cookies -= power_cost;
-    klik_power++;
-    power_cost = Math.floor(power_cost * 1.5);
-    updateDisplay();
-  }
-}
+ // Function om de click power te updaten ╰（‵□′）╯
+ function power() {
+     aantal_cookies -= power_cost;
+     if (aantal_cookies >= power_cost) {
+         power_cost = Math.floor(power_cost * 1.5);
+         klik_power++;
+        }
+        updateDisplay();
+}   
+
+ // Funtion to buy Cursor ╰(*°▽°*)╯
+// function koopCursor() {
+// if (aantal_cookies >= cursor_cost) {
+// aantal_cookies -= cursor_cost;
+// cursor_count++;
+// cursor_cost = Math.floor(cursor_cost * 1.15);
+// updateDisplay();
+//     }
+// }
+        
+// // Function to buy Grandma ╰(*°▽°*)╯
+// function koopGrandma() {
+// if (aantal_cookies >= grandma_cost) {
+// aantal_cookies -= grandma_cost;
+// grandma_count++;
+// grandma_cost = Math.floor(grandma_cost * 1.15);
+// updateDisplay();
+//     }
+// }
+        
+// // Function to buy Farm ╰(*°▽°*)╯
+// function koopFarm() {
+// if (aantal_cookies >= farm_cost) {
+// aantal_cookies -= farm_cost;
+// farm_count++;
+// farm_cost = Math.floor(farm_cost * 1.15);
+// updateDisplay();
+//     }
+// }
 
 function calcularTotalCPS() {
-  return (
-    cursor_count * cursor_production +
-    grandma_count * grandma_production +
-    farm_count * farm_production
-  );
+    return (cursor_count * cursor_production) + 
+           (grandma_count * grandma_production) + 
+           (farm_count * farm_production);
 }
 
 // Function to display the cookies ヾ(⌐■_■)ノ♪
@@ -95,11 +128,9 @@ function updateDisplay() {
 
 // CPS total
 function calcularTotalCPS() {
-  return (
-    cursor_count * cursor_production +
-    grandma_count * grandma_production +
-    farm_count * farm_production
-  );
+    return (cursor_count * cursor_production) + 
+           (grandma_count * grandma_production) + 
+           (farm_count * farm_production);
 }
 
 // Automaties productie
