@@ -13,18 +13,121 @@
 </head>
 <body class="p-3 mb-2 bg-black text-white">
 <h1 class="hoofdstuk1">Cookie-cliker</h1>
-<div class="gamecontainer" >
-<div class="countcookie"><p>Aantal:<span id="aantal_cookies"></span></p></div>
+
+<div class="gamecontainer">
+    <div class="countcookie"><p>Aantal:<span id="aantal_cookies"></span></p></div>
 
  <div class="allthebuttons">
  <button id="buttoncookie" onclick="klik()"> 
   <img class="imagecookie" src="../foto/thecoockie.png" alt="thecookie" > 
  </button>
 
- <button class="buttonupgrade" onclick="power()">
+    <button class="buttonupgrade" onclick="power()">
     <img class="imageupgrade" src="../foto/upgrade.png" alt="">
-</button>
+    </button>
 
+    <div class="shop-panel">
+    <h2>Winkel</h2>
+    
+    <!-- Cursor -->
+    <div class="shop-item">
+        <div>
+            <h3>Cursor</h3>
+            <p>Owned: <span id="cursor-count">0</span></p>
+            <p>Cost: <span id="cursor-cost">15</span> cookies</p>
+            <p>CPS: <span id="cursor-cps">0</span></p>
+        </div>
+        <button id="cursor-btn" onclick="cursor.koopUnit()">Koop</button>
+    </div>
+
+    <!-- Grandma -->
+    <div class="shop-item">
+        <div>
+            <h3>Grandma</h3>
+            <p>Owned: <span id="grandma-count">0</span></p>
+            <p>Cost: <span id="grandma-cost">100</span> cookies</p>
+            <p>CPS: <span id="grandma-cps">0</span></p>
+        </div>
+        <button id="grandma-btn" onclick="grandma.koopUnit()">Koop</button>
+    </div>
+
+    <!-- Farm -->
+    <div class="shop-item">
+        <div>
+            <h3>Farm</h3>
+            <p>Owned: <span id="farm-count">0</span></p>
+            <p>Cost: <span id="farm-cost">500</span> cookies</p>
+            <p>CPS: <span id="farm-cps">0</span></p>
+        </div>
+        <button id="farm-btn" onclick="farm.koopUnit()">Koop</button>
+    </div>
+
+    <!-- Mine -->
+    <div class="shop-item">
+        <div>
+            <h3>Mine</h3>
+            <p>Owned: <span id="mine-count">0</span></p>
+            <p>Cost: <span id="mine-cost">1000</span> cookies</p>
+            <p>CPS: <span id="mine-cps">0</span></p>
+        </div>
+        <button id="mine-btn" onclick="mine.koopUnit()">Koop</button>
+    </div>
+
+    <!-- Factory -->
+    <div class="shop-item">
+        <div>
+            <h3>Factory</h3>
+            <p>Owned: <span id="factory-count">0</span></p>
+            <p>Cost: <span id="factory-cost">1500</span> cookies</p>
+            <p>CPS: <span id="factory-cps">0</span></p>
+        </div>
+        <button id="factory-btn" onclick="factory.koopUnit()">Koop</button>
+    </div>
+
+    <!-- Bank -->
+    <div class="shop-item">
+        <div>
+            <h3>Bank</h3>
+            <p>Owned: <span id="bank-count">0</span></p>
+            <p>Cost: <span id="bank-cost">2000</span> cookies</p>
+            <p>CPS: <span id="bank-cps">0</span></p>
+        </div>
+        <button id="bank-btn" onclick="bank.koopUnit()">Koop</button>
+    </div>
+
+    <!-- Temple -->
+    <div class="shop-item">
+        <div>
+            <h3>Temple</h3>
+            <p>Owned: <span id="temple-count">0</span></p>
+            <p>Cost: <span id="temple-cost">3000</span> cookies</p>
+            <p>CPS: <span id="temple-cps">0</span></p>
+        </div>
+        <button id="temple-btn" onclick="temple.koopUnit()">Koop</button>
+    </div>
+
+    <!-- Wizard Tower -->
+    <div class="shop-item">
+        <div>
+            <h3>Wizard Tower</h3>
+            <p>Owned: <span id="wizard_tower-count">0</span></p>
+            <p>Cost: <span id="wizard_tower-cost">4000</span> cookies</p>
+            <p>CPS: <span id="wizard_tower-cps">0</span></p>
+        </div>
+        <button id="wizard_tower-btn" onclick="wizard_tower.koopUnit()">Koop</button>
+    </div>
+
+    <!-- Shipment -->
+    <div class="shop-item">
+        <div>
+            <h3>Shipment</h3>
+            <p>Owned: <span id="shipment-count">0</span></p>
+            <p>Cost: <span id="shipment-cost">4500</span> cookies</p>
+            <p>CPS: <span id="shipment-cps">0</span></p>
+        </div>
+        <button id="shipment-btn" onclick="shipment.koopUnit()">Koop</button>
+    </div>
+</div>
 </div>
 
 <script src="javascript/script.js"></script>
