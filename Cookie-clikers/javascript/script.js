@@ -94,15 +94,13 @@ class ProductionUnit {
     this.production = startProduction;
     this.idPrefix = idPrefix;
   }
-  //   This, this! was bullshit! be beter. Shame on you.
-  buy(game) {
-    if (game.cookies >= this.cost) {
-      game.cookies -= this.cost;
-      this.count++;
-      this.cost = Math.floor(this.cost * 1.15);
-      game.updateDisplay();
-      game.saveManager.save();
-      return true;
+
+    koopUnit(){
+        if (aantal_cookies >= this.cost) {
+        aantal_cookies -= this.cost;
+        this.count++;
+        this.cost = Math.floor(this.cost * 1.15);
+        updateDisplay();
     }
     return false;
   }
@@ -203,85 +201,21 @@ class UpgradeManager {
         "Verdubbelt farm productie"
       ),
 
-      new Upgrade(
-        4,
-        "Klik Boost",
-        200,
-        (g) => {
-          g.clickPower += 5;
-        },
-        "Voegt +5 toe aan klik power"
-      ),
-
-      new Upgrade(
-        5,
-        "Efficiënte Mijn",
-        2000,
-        (g) => {
-          const mine = g.getUnitByPrefix("mine");
-          if (mine) mine.production = mine.baseProduction * 2;
-        },
-        "Verdubbelt mine productie"
-      ),
-    ];
-  }
-  // Eerlijk. ctrl-c ctrl-v.
-  getAvailableUpgrades(game) {
-    return this.upgrades.filter(
-      (upgrade) =>
-        !upgrade.purchased &&
-        !this.purchasedUpgradeIds.includes(upgrade.id) &&
-        game.cookies >= upgrade.cost
-    );
-  }
-
-  showUpgradeMenu(game) {
-    const available = this.getAvailableUpgrades(game);
-
-    if (available.length === 0) {
-      alert(
-        "Geen upgrades beschikbaar! Je hebt niet genoeg cookies of alle upgrades zijn al gekocht."
-      );
-      return;
-    }
-
-    let upgradeList = "Beschikbare Upgrades:\n\n";
-    available.slice(0, 5).forEach((upgrade, index) => {
-      upgradeList += `${index + 1}. ${upgrade.name} - ${
-        upgrade.cost
-      } cookies\n   ${upgrade.description}\n\n`;
-    });
-
-    const choice = prompt(
-      upgradeList +
-        "Voer het nummer in van de upgrade die je wilt kopen (of annuleer):"
-    );
-
-    if (choice) {
-      const index = parseInt(choice) - 1;
-      if (index >= 0 && index < available.length) {
-        const upgrade = available[index];
-        if (upgrade.buy(game)) {
-          this.purchasedUpgradeIds.push(upgrade.id);
-          alert(`Je hebt ${upgrade.name} gekocht!`);
-        }
-      }
-    }
-  }
-
-  markUpgradeAsPurchased(upgradeId) {
-    const upgrade = this.upgrades.find((u) => u.id === upgradeId);
-    if (upgrade) {
-      upgrade.purchased = true;
-    }
-  }
-}
-// IT's HIM, WHAT A SAVE!!! ┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻
-class SaveManager {
-  constructor(game) {
-    this.game = game;
-    this.saveKey = "cookieClickerSave";
-  }
+function klik(){
+    total_cookies_produced += klik_power; 
+    aantal_cookies += klik_power;  
+    
+    updateDisplay(); 
+    aantal_cookies = localStorage.clickcount; 
+    //localstorage opslaan voor de progress(resultaat) 
+    localStorage.clickcount = Number(localStorage.clickcount)+1; 
+    if(localStorage.clickcount) { 
+        localStorage.clickcount = 1; 
+    } else{ 
+        document.getElementById("aantal_cookies").innerHTML =localStorage.clickcount; 
+    } 
+    document.getElementById("aantal_cookies").innerText = aantal_cookies; 
+    //heb dit veranderd het origineel code is (document.getElementById("aantal_cookies").innerText =aantal_cookies) 
 
   save() {
     const data = {
@@ -368,14 +302,18 @@ class Statistics {
   }
 }
 
-let game;
-
-function klik() {
-  if (game) game.click();
+// Function to display the cookies ヾ(⌐■_■)ノ♪
+function updateDisplay() {
+  //cookies update
+  document.getElementById("aantal_cookies").innerText =
+    Math.floor(aantal_cookies);
 }
 
-function power() {
-  if (game) game.upgradeManager.showUpgradeMenu(game);
+// CPS total
+function calcularTotalCPS() {
+    return (cursor_count * cursor_production) + 
+           (grandma_count * grandma_production) + 
+           (farm_count * farm_production);
 }
 
 function toonOverzicht() {
